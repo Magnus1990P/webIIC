@@ -1,15 +1,19 @@
 <?php
 	$sqlImage = "SELECT * FROM image WHERE CLASS = -1 LIMIT 1";
-	$sqlProg  = "SELECT (SELECT COUNT(AID) FROM image WHERE CLASS=1)  AS GOOD, " .
-			  " (SELECT COUNT(AID) FROM image WHERE CLASS=0)  AS BAD   " .
-			  " (SELECT COUNT(AID) FROM image WHERE CLASS=-1) AS REM   FROM image";
+	$sqlProg	= "SELECT (SELECT COUNT(AID) FROM image WHERE CLASS=1) AS GOOD, " .
+							"				(SELECT COUNT(AID) FROM image WHERE CLASS=0) AS BAD,  " .
+							"				(SELECT COUNT(AID) FROM image WHERE CLASS=-1) AS REM  ";
+
 
 	$conn	= new mysqli('localhost', 'root', 'toor', 'webIIC');
 	$bdir	= "/development/dbIris/img_processed/";
+	
 	$res	= $conn->query( $sqlImage );
-	$R 	= $res->fetch_assoc( );
-	$res 	= $conn->query(  );
-	$S 	= $res->fetch_assoc( );
+	$R 		= $res->fetch_assoc( );
+
+	$res 	= $conn->query( $sqlProg );
+	$S 		= $res->fetch_assoc( );
+	
 	if( $R != false) {
 		echo 	'{ "AID":"' . $R['AID']  . '", ' .
 			'  "GOD":"' . $S['GOOD'] . '", ' .
