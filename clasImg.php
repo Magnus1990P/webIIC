@@ -7,12 +7,7 @@
 		$sql = 	"UPDATE image SET CLASS='" . $_GET['CLASS'] . 
 				"' WHERE AID='" . $_GET['AID'] . "'";
 		
-		$sqlProg  = "SELECT (SELECT COUNT(AID) FROM image WHERE CLASS=1)  AS GOOD, " .
-						  " (SELECT COUNT(AID) FROM image WHERE CLASS=0)  AS BAD   " .
-						  " (SELECT COUNT(AID) FROM image WHERE CLASS=-1) AS REM   ";
-
 		$conn = new mysqli('localhost', 'root', 'toor', 'webIIC');
-		$res 	= $conn->query( $sqlProg );
-		$R 		= $res->fetch_assoc( );
+		$res 	= $conn->query( $sql );
 	}
 ?>
