@@ -1,11 +1,16 @@
 body{
-	background:			#369;
+	background:		#AAA;
 	padding-top:		10px;
 	font-family:		Helvetica;
 	font-size:			12pt;
 }
 
-.divMain, .divHead, .divHor, .divImg, .image, button{
+small{
+	float: 			right;
+	margin-right:		5%;
+}
+
+.divVer, .divMain, .divHead, .divHor, .divImg, .image, button{
 	text-align:			center;
 	display:				block;
 	margin-left:		auto;
@@ -13,18 +18,27 @@ body{
 }
 
 .divMain{
-	width:					60%;
-	max-width:			600px;
+	max-width:			1000px;
+	max-height:			740px;
 }
 
 .divHead{
 	background:			#CCC;
-	width:					90%;
-	padding:				10px 10px 10px 10px;
+	width:				75%;
 	margin-bottom:	10px;
 	border-radius:	10px;
-	border:					5px solid #888;
-	box-shadow:			#444 5px 5px 10px;
+	border:				5px solid #888;
+	box-shadow:			#222 5px 5px 10px;
+}
+
+.divLeft{
+	max-width:				69%;
+	display:			inline-block;
+}
+
+.divRight{
+	width:				30%;
+	display:			inline-block;
 }
 
 .divHor{
@@ -33,29 +47,40 @@ body{
 }
 
 .divImg, button{
-	display:				inline-block;
-	width:					49%;
+	width:					100%;
 }
 
 .image{
-	border:					#000 solid 2px;
-	min-height:			75px;
-	max-height:			400px;
-	width:					99%;
+	border:				#000 solid 2px;
+	min-height:			80px;
+	max-height:			500px;
+	max-width:			99%;
 }
 
 button{
-	height:					50px;
-	border-radius:	5px;
+	display:			inline-block;
+	width:				78%;
+	height:				50px;
+	border-radius:			5px;
 	font-size:			20pt;
-	font-weight:		bold;
+	font-weight:			bold;
 	box-shadow:			#222 1px 1px 10px;
+	margin-bottom:			5px;
 }
 .btn-good{
+	width:				37%;
 	background:			#0FF000;
-	border:					green outset 2px;
+	border:				green outset 2px;
+	margin-right:			auto;
+}
+.btn-err{
+	display:			block;
+	background:			#777;
+	border:				#000 outset 2px;
 }
 .btn-poor{
+	width:				40%;
 	background:			#F00;
-	border:					red outset 2px;
+	border:				red outset 2px;
+	margin-left:			auto;
 }

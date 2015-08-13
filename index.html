@@ -14,6 +14,10 @@
 					$("#mask").html( "<img src='" + d.MSK + "' class='image' />" );
 					$("#imno").html( "<img src='" + d.IMN + "' class='image' />" );
 					$("#mano").html( "<img src='" + d.MAN + "' class='image' />" );
+					$("#btnD").html( "(" + d.GOD + ")" );
+					$("#btnP").html( "(" + d.BAD + ")" );
+					$("#btnE").html( "(" + d.ODD + ")" );
+					$("#head").html( "(" + d.REM + ")" );
 				});
 			}
 			
@@ -22,9 +26,26 @@
 				getImage( );
 			}
 
-			$().ready( function(){
-				getImage( );
+			$().ready(getImage( ));
+			
+			$(document).keypress( function( e ){
+				if( e.key == "1"){
+					$.ajax( "./clasImg.php?AID=" + $AID + "&CLASS=1" );
+					getImage( );
+				}
+				else if( e.key == "3" ){
+					$.ajax( "./clasImg.php?AID=" + $AID + "&CLASS=0" );
+					getImage( );
+				}
+				else if( e.key == "0" ){
+					$.ajax( "./clasImg.php?AID=" + $AID + "&CLASS=-2" );
+					getImage( );
+				}
+				else if( e.keyCode >= 37 && e.keyCode <= 40 ){
+					getImage( );
+				}
 			});
+
 		</script>
 	</head>
 
@@ -32,26 +53,26 @@
 	<div class="divMain">
 		<div class="divHor">
 			<div class="divHead">
-				<h1>Iris Image Classifier</h1>
+				<h1>Iris Image Classifier <small id="head"></small> </h1>
 			</div>
 		</div>
+	
 		
-		<div class="divHor">
-			<div id="segm" class="divImg">
-			</div>
-			<div id="mask" class="divImg">
-			</div>
-		</div>
-			
-		<div id="imno" class="divHor">
+		<div class="divLeft">
+			<div id="segm" class="divImg"></div>
 		</div>
 
-		<div id="mano" class="divHor">
-		</div>
+		<div class="divRight">
+			<div id="mask" class="divHor divImg"></div>
+			<div id="imno" class="divHor divImg"></div>
+			<div id="mano" class="divHor divImg"></div>
+		</div>	
+				
 			
 		<div class="divHor">
-			<button class="btn-good" onclick="classify( 1 );">DECENT</button>
-			<button class="btn-poor" onclick="classify( 0 );">POOR</button>
+			<button class="btn-good" onclick="classify( 1 );">[1] DECENT <small id="btnD"></small></button>
+			<button class="btn-poor" onclick="classify( 0 );">[3] POOR <small id="btnP"></small></button>
+			<button class="btn-err"  onclick="classify( -2 );">[0] PROCESS ERROR <small id="btnE"></small></button>
 		</div>
 	</div>
 	</body>

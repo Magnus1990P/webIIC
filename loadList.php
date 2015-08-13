@@ -1,10 +1,12 @@
 <?php
 
-$conn 		= new mysqli('localhost', 'root', 'toor', 'webIIC');
-$bdir 		= "/development/dbIris/img_processed/";
-$fhandle	= fopen("./imgSkelList.txt", "r");
-$cont 		= fread( $fhandle, filesize( "./imgSkelList.txt" ) );
-						fclose( $fhandle );
+$conn 		= new mysqli('localhost', 'root', '0x80Hack', 'webIIC');
+//$bdir 		= "/dbIris/img_processed/";
+$bdir 		= "./img_processed/";
+$fname		= "./webIIC.txt";
+$fhandle	= fopen( $fname, "r");
+$cont 		= fread( $fhandle, filesize( $fname ) );
+		  fclose( $fhandle );
 
 $imgs = preg_split( '/$\R^/m', $cont );
 
