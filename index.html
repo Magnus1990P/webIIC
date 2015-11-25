@@ -1,52 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" charset="utf-8">
 	<head>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="style.css">
-		
+
 		<script>
 			$AID = -1;
-			
-			function getImage( ){
-				$.getJSON( "./getImg.php", function(d){
-					$AID = d.AID;
-					$("#segm").html( "<img src='" + d.SEG + "' class='image' />" );
-					$("#mask").html( "<img src='" + d.MSK + "' class='image' />" );
-					$("#imno").html( "<img src='" + d.IMN + "' class='image' />" );
-					$("#mano").html( "<img src='" + d.MAN + "' class='image' />" );
-					$("#btnD").html( "(" + d.GOD + ")" );
-					$("#btnP").html( "(" + d.BAD + ")" );
-					$("#btnE").html( "(" + d.ODD + ")" );
-					$("#head").html( "(" + d.REM + ")" );
-				});
-			}
-			
-			function classify( $CL ){
-				$.ajax( "./clasImg.php?AID=" + $AID + "&CLASS=" + $CL );
-				getImage( );
-			}
-
-			$().ready(getImage( ));
-			
-			$(document).keypress( function( e ){
-				if( e.key == "1"){
-					$.ajax( "./clasImg.php?AID=" + $AID + "&CLASS=1" );
-					getImage( );
-				}
-				else if( e.key == "3" ){
-					$.ajax( "./clasImg.php?AID=" + $AID + "&CLASS=0" );
-					getImage( );
-				}
-				else if( e.key == "0" ){
-					$.ajax( "./clasImg.php?AID=" + $AID + "&CLASS=-2" );
-					getImage( );
-				}
-				else if( e.keyCode >= 37 && e.keyCode <= 40 ){
-					getImage( );
-				}
-			});
-
+			var XP = -1;			var YP = -1;
+			var XI = -1;			var YI = -1;
+			var XC = -1;			var YC = -1;
 		</script>
+
+		<script src="grabImage.js"></script>
+		<script src="classify.js"></script>
+		<script src="navigate.js"></script>
+		<script src="pixelSelect.js"></script>
+
+
+
+
 	</head>
 
 	<body>

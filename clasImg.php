@@ -7,7 +7,13 @@
 		$sql = 	"UPDATE image SET CLASS='" . $_GET['CLASS'] . 
 				"' WHERE AID='" . $_GET['AID'] . "'";
 		
-		$conn = new mysqli('localhost', 'root', '0x80Hack', 'webIIC');
+		$conn = new mysqli('localhost', 'root', 'toor', 'webIIC');
 		$res 	= $conn->query( $sql );
+		
+		if( isset( $_GET['COORD'] ) ){
+			$sql = 	"UPDATE image SET COORD='" . $_GET['COORD'] . "' WHERE AID='" . $_GET['AID'] . "'";
+			$conn = new mysqli('localhost', 'root', 'toor', 'webIIC');
+			$res 	= $conn->query( $sql );
+		}
 	}
 ?>
