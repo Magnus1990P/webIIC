@@ -13,7 +13,6 @@ function getImage( ){
 		$("#btnE").html( "(" + d.ODD + ")" );
 		$("#head").html( "(" + d.REM + ")" );
 	});
-
 	
 	XP = -1;				YP = -1;
 	XI = -1;				YI = -1;
