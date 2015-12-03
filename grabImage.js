@@ -5,8 +5,8 @@ function getImage( ){
 		$("#segm").html( "<img src='" + d.SEG + "' class='image' " +
 			"onclick='selectPoint( event, $(this) )' />" );
 		$("#mask").html( "<img src='" + d.MSK + "' class='image' />" );
-		$("#imno").html( "<img src='" + d.IMN + "' class='image' />" );
-		$("#mano").html( "<img src='" + d.MAN + "' class='image' />" );
+		//$("#imno").html( "<img src='" + d.IMN + "' class='image' />" );
+		//$("#mano").html( "<img src='" + d.MAN + "' class='image' />" );
 		
 		$("#btnD").html( "(" + d.GOD + ")" );
 		$("#btnP").html( "(" + d.BAD + ")" );
