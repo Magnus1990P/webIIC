@@ -29,10 +29,10 @@
 
 			'  "CLS":"' . $R['CLASS']. '", ' .
 			'  "ORG":"' . $R[ 'ORG' ]. '", ' .
-			'  "SEG":"' . $R['PATH'] . "_segm.bmp" . '",' .
-			'  "MSK":"' . $R['PATH'] . "_mask.bmp" . '",' .
 			//'  "IMN":"' . $R['PATH'] . "_imno.bmp" . '",' .
-			//'  "MAN":"' . $R['PATH'] . "_mano.bmp" . '"'  .
+			//'  "MAN":"' . $R['PATH'] . "_mano.bmp" . '",'  .
+			'  "SEG":"' . $R['PATH'] . "_segm.bmp" . '",' .
+			'  "MSK":"' . $R['PATH'] . "_mask.bmp" . '"' .
 			'}';
 	}
 ?>
